@@ -22,7 +22,7 @@ void listDevicesDirectShow(IMoniker* pMoniker) {
     // Get the device name
     VARIANT varName;
     VariantInit(&varName);
-    hr = pPropBag->Read(L"FriendlyName", &varName, 0);
+    hr = pPropBag->Read(L"FriendlyName", &varName, nullptr);
     if (SUCCEEDED(hr)) {
         std::wcout << L"DirectShow: " << varName.bstrVal << std::endl;
     }
